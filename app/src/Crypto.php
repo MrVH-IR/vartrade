@@ -63,7 +63,6 @@ $crypto = $cryptoData['data'];
                     <h3>Market Cap</h3>
                     <p>$<?php echo number_format(floatval($crypto['marketCapUsd']), 0); ?></p>
                 </div>
-                <div id="chart-container" class="mt-8"></div>
                 <div class="stat-item">
                     <h3>Volume (24Hr)</h3>
                     <p>$<?php echo number_format(floatval($crypto['volumeUsd24Hr']), 0); ?></p>
@@ -89,8 +88,12 @@ $crypto = $cryptoData['data'];
             <?php endif; ?>
         </div>
     </main>
-    <script type="text/babel">
-        const { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } = Recharts;
+    <aside>
+        <div id="chart-container" class="mt-8"></div>
+    </aside>
+</body>
+<script type="text/babel">
+    const { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } = Recharts;
 
 const CryptoChart = ({ cryptoId }) => {
     const [priceData, setPriceData] = React.useState([]);
@@ -226,6 +229,7 @@ const CryptoChart = ({ cryptoId }) => {
     );
 };
 
+// Render the chart
 const container = document.getElementById('chart-container');
 const root = ReactDOM.createRoot(container);
 root.render(<CryptoChart cryptoId="<?php echo $cryptoId; ?>" />);

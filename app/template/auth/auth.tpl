@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <title>Authentication</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="../../css/auth/auth.css" rel="stylesheet">
+    <link href="../css/auth/auth.css" rel="stylesheet">
 </head>
 
 <body>
@@ -71,7 +71,7 @@
             <!-- Mode toggle -->
             <div class="text-center">
                 <button id="modeToggle" class="btn btn-link text-decoration-none">
-                    <span id="toggleText">Not Registered? Click Here</span>
+                    <span id="toggleText"><a href="../src/reg.php">Not Registered? Click Here</a></span>
                     <i class="bi bi-arrow-left ms-1"></i>
                 </button>
             </div>
