@@ -48,4 +48,19 @@ class Database
             echo "Server Error";
         }
     }
+
+    public static function DeleteFromUsers($user_id)
+    {
+        try {
+            $pdo = self::connToDB();
+            $query = "DELETE FROM var_users WHERE user_id = :user_id";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindparam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->execute();
+            return true;
+        } catch (PDOException) {
+            echo "Server Error";
+            return false;
+        }
+    }
 }
